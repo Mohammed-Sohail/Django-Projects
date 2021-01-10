@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="container">
+    <div  class="w-25 mx-auto">
+        <h1>About Us</h1>
+    </div>
+    <br>
+    <div class="row align-items-center container">
+            <div class="col-md-6 px-8">
+                <div class="card content-section px-3" style="width: 22.5rem;height:23.5rem;">
+                    <img class="card-img-top" src="{% static 'images/sadik.jpg' %}" alt="Card image cap" width='50' height='150'>
+                    <div class="card-body">
+                        <p><strong style="font-size: larger;">SADIK ALI</strong><strong style="font-size: small;font-weight:22px"><span>      (Course Instructor)</span></strong></p>
+                        <p class="card-text"> <i class="material-icons" style="color: #3B3131;">&#xe8f9;</i> Cloud Infrastructure Architect<br>
+                            <i class="material-icons" style="color: #3B3131;">&#xe894;</i> 12+ years global Experience<br>
+                            <i class="material-icons" style="color: #3B3131;">&#xe0be;</i> shaik.sadik@gmail.com
+                            <div class="border-top pt-3">
+                                <div class="row px-6 ml-2">
+                                <a class="col md-2 px-6" href="https://www.facebook.com/ELearn.Updates"><i style="font-size:24px" class="fa">&#xf230;</i></a>
+                                <a href="https://www.linkedin.com/in/sadik-ali-917931b" class="col md-2 px-6"><i style="font-size:24px" class="fa">&#xf0e1;</i></a>
+                                <a href="" class="col md-2 px-6"><i style="font-size:24px" class="fa">&#xf16a;</i></a>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>  
+            <div class="col-md-6 px-8 container">
+                <div class="card content-section px-3" style="width: 22.5rem;height:23.5rem;">
+                    <img class="card-img-top" src="{% static 'images/sohail.jpg' %}" alt="Card image cap" width='50' height='150'>
+                    <div class="card-body">
+                        <p><strong style="font-size: larger;">SOHAIL ALI</strong><strong style="font-size: small;font-weight:22px"><span>    (Free Lancer)</span></strong></p>
+                        <p class="card-text"> <i class="material-icons" style="color: #3B3131;">&#xe8f9;</i>Developer<br>
+                            <i class="material-icons" style="color: #3B3131;">&#xe894;</i> 1 Year of Industrial Experience<br>
+                            <i class="material-icons" style="color: #3B3131;">&#xe0be;</i> alisohail028@gmail.com
+                            <div class="border-top pt-3">
+                                <div class="row px-6 ml-2">
+                                    <a class="col md-2 px-6" href="https://www.facebook.com/ELearn.Updates"><i style="font-size:24px" class="fa">&#xf230;</i></a>
+                                    <a href="https://www.youtube.com/channel/UCFs76VcQEr8WQHGCKYMCgrg/featured" class="col md-2 px-6"><i style="font-size:24px" class="fa">&#xf0e1;</i></a>
+                                    <a href="https://www.youtube.com/channel/UCFs76VcQEr8WQHGCKYMCgrg/videos" class="col md-2 px-6"><i style="font-size:24px" class="fa">&#xf16a;</i></a>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>  
+    </div>
+</div>
+{% endblock content %}

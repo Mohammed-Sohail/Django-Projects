@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<br>
+<div class=" w-25 mx-auto">
+  {% if messages %}
+        {% for message in messages %} 
+          <div class='alert alert-{{ message.tags }} container'>
+          {{message}}
+          </div>
+        {% endfor %}
+  {% endif %}
+</div>
+  <fieldset class="content-section container col-md-6">
+  <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+    <div class="border-top pt-3">
+      <legend class="scheduler-border w-25 mx-auto" style="font-weight:900;font-size:40px" >Log In</legend>
+    </div>
+      <div class="form-row">
+        <div class="form-group col-md-8 container required">
+          <label for="exampleInputEmail1">User Name</label>
+          <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter valid username" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8 container required">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Enter correct Password" required>
+        </div>
+      </div>
+      <div class="form-group">
+            <button type="submit" name="login" id="" class="btn btn-primary btn-lg btn-block w-25 mx-auto">Log in</button>
+      </div>
+      <div class="border-top pt-3">
+            <small class="text-muted">
+                Not Registered yet <a class="ml-2" href="{% url 'register' %}">Sign Up</a>
+            </small>
+      </div>
+    </form>
+  </fieldset>
+{% endblock content%}

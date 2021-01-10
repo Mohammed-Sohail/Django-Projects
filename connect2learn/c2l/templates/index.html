@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+        <div class="w-25 mx-auto">
+        <img src="{% static 'images/c2l-1.png' %}" height="120" width="380">
+        <h1 style="color:#323334;text-align:center;font-family:Times New Roman;font-size: 38px;">Connect<span style="font-size: 50px;font-weight: 900;color:red; font-size;font-family:Lucida Consol;">2</span>Learn</h1>
+        </div>
+            <div class="row align-items-center ml-5">
+                <div class="col-md-4 px-8">
+                    <div class="card content-section px-3" style="width: 19rem;height:20.5rem;">
+                        <img class="card-img-top" src="{% static 'images/aboutus.png' %}" alt="Card image cap" width='60' height='115'>
+                        <div class="card-body">
+                            <h3 class="card-title">About!!</h3>
+                            <p class="card-text">comprises of information about Instructor,Mentors and Developer</p>
+                            <a href="{% url 'about' %}" class="btn btn-secondary">Visit Us</a>
+                        </div>
+                    </div>
+                </div>                
+                <div class="col-md-4 px-8">
+                    <div class="card content-section px-3" style="width: 19rem; height:20.5rem;">
+                        <img class="card-img-top" src="{% static 'images/register.png' %}" alt="Card image cap" width='60' height='118'>
+                        <div class="card-body">
+                            <h3 class="card-title">Get Registered!!</h3>
+                            <p class="card-text">Join Our Community by Registering here</p>
+                            <a href="{% url 'register'%}" class="btn btn-secondary">Join Us</a>
+                        </div>
+                    </div>
+                </div>
+               <div class="col-md-4 px-8 ">
+                    <div class="card content-section px-3" style="width: 19rem; height:20.5rem;">
+                        <img class="card-img-top" src="{% static 'images/services.jpg' %}" alt="Card image cap" width='60' height='118'>
+                        <div class="card-body">
+                            <h3 class="card-title">Services!!</h3>
+                            <p class="card-text">Contains the Services,Programs,Courses we are offering</p>
+                            <a href="#" class="btn btn-secondary">Our Services</a>
+                        </div>
+                    </div>
+                </div>
+            <div>
+</section>
+{% endblock content %}

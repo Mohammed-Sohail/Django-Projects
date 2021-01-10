@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<br>
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger w-25 mx-auto">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger w-25 mx-auto">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+   {% endif %}
+    <div class="content-section container col-md-6">
+    <form action="{% url 'register' %}" method="Post">
+        {% csrf_token %}
+       <div class="form-row">
+         <div class="form-group col-md-6">
+            {{form.first_name | as_crispy_field}}
+         </div>
+         <div class="form-group col-md-6">
+            {{form.last_name | as_crispy_field}}
+         </div>
+       </div>
+       <div class="form-row">
+        <div class="form-group col-md-6">
+           {{form.email | as_crispy_field}}
+        </div>
+        <div class="form-group col-md-6">
+            {{form.username | as_crispy_field}}
+         </div>
+      </div>
+       <div class="form-row">
+         <div class="form-group col-md-6">
+            {{form.password1 | as_crispy_field}}
+         </div>
+         <div class="form-group col-md-6">
+            {{form.password2 | as_crispy_field}}
+         </div>
+       </div>
+        <div class="form-row">
+         <div class="form-group col-md-6">
+            {{form.phone | as_crispy_field}}
+         </div>
+         <div class="form-group col-md-6">
+            {{form.address| as_crispy_field}}
+         </div>
+       </div>
+        <div class="form-group">
+            <button type="submit" name="signup" id="" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+        </div>
+    </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have an Account <a class="ml-2" href="{% url 'login' %}">Log In</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}
+    
