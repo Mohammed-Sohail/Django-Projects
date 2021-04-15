@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+        <div class="w-25 mx-auto">
+            <span><img src="{% static 'images/tata-full.png' %}" height="120" width="380"><hr>
+            <img src="{% static 'images/MS.png' %}" height="100" width="400"></span>
+        </div>
+            <div class="row align-items-center ml-5">
+                <div class="col-md-4 px-8">
+                    <div class="card content-section px-3" style="width: 19rem;height:20.5rem;">
+                        <img class="card-img-top" src="{% static 'images/aboutus.png' %}" alt="Card image cap" width='60' height='115'>
+                        <div class="card-body">
+                            <h3 class="card-title">About!!</h3>
+                            <p class="card-text">Comprises of information about Projects,Teams and our Organization</p>
+                            <a href="{% url 'about' %}" class="btn btn-secondary">Visit Us</a>
+                        </div>
+                    </div>
+                </div>                
+                <div class="col-md-4 px-8">
+                    <div class="card content-section px-3" style="width: 19rem; height:20.5rem;">
+                        <img class="card-img-top" src="{% static 'images/register.png' %}" alt="Card image cap" width='60' height='118'>
+                        <div class="card-body">
+                            <h3 class="card-title">Get Registered!!</h3>
+                            <p class="card-text">Join Our Community by Registering here</p>
+                            <a href="{% url 'register'%}" class="btn btn-secondary">Join Us</a>
+                        </div>
+                    </div>
+                </div>
+               <div class="col-md-4 px-8 ">
+                    <div class="card content-section px-3" style="width: 19rem; height:20.5rem;">
+                        <img class="card-img-top" src="{% static 'images/MBU.png' %}" alt="Card image cap" width='60' height='118'>
+                        <div class="card-body">
+                            <h3 class="card-title">Services!!</h3>
+                            <p class="card-text">Offers Services of Microsoft in Association with TCS</p>
+                            <a href="#" class="btn btn-secondary">Our Services</a>
+                        </div>
+                    </div>
+                </div>
+            <div>
+</section>
+{% endblock content %}

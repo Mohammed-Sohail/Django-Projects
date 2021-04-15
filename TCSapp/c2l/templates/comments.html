@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<br>
+   <fieldset class="content-section container col-md-6">
+    <form action="{% url 'comments' %}" method="POST">
+          {% csrf_token %}
+      <div class="border-top pt-3">
+        <legend class="scheduler-border w-50 mx-auto" style="font-weight:900;font-size:40px" >Comments_Form</legend>
+      </div>
+        <div class="form-row">
+          <div class="form-group col-md-8 container required">
+            <label>User Name</label>
+            <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter valid username" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-8 container required">
+            <label>Email</label>
+            <input type="email" class="form-control" name="mail" placeholder="Enter valid email" required>
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-8 container required">
+              <label>Subject</label>
+              <input type="text" class="form-control" name="sub" placeholder="Enter valid email" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-8 container required">
+              <label>Comment</label>
+              <textarea class="form-control" name="body" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+              <button type="submit" name="post" id="" class="btn btn-primary btn-lg btn-block w-25 mx-auto">Post</button>
+        </div>
+        <div class="border-top pt-3">
+              <small class="text-muted">
+                  Submit Another Response <a class="ml-2" href="{% url 'comments' %}">NewResponse</a>
+              </small>
+        </div>
+      </form>
+    </fieldset>
+{% endblock content %}
+    
