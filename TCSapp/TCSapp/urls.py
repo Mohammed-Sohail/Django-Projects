@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from c2l.views import home,register,log_in,profile,log_out,about,comment
+from c2l.views import home,register,log_in,profile,log_out,about,comment,feedback
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,7 +24,8 @@ urlpatterns = [
     path('about/',about,name='about'),
     path('register/',register,name='register'),
     path('login/',log_in,name='login'),
-    path('login/success',profile,name='profile'),
+    path('login/success',profile,name='profiles'),
     path('login/success/comments',comment,name='comments'),
+    path('login/success/comments/report',feedback,name='feedback'),
     path('profile/logout',log_out,name='logout')
 ]

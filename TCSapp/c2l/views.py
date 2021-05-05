@@ -86,13 +86,13 @@ def comment(request):
         date = cur.strftime("%d-%m-%y")
         time = cur.strftime("%H:%M:%S")
         async def run():
-            events = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://traileventhub.servicebus.windows.net/;SharedAccessKeyName=all;SharedAccessKey=UGHwK6OuNPrKj5ehj745BotXr2rMAh/C/1ScynAP7AQ=", eventhub_name="rg2input")
+            events = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://uievent.servicebus.windows.net/;SharedAccessKeyName=all;SharedAccessKey=aZ/r24gZxBGSxhC2OimpOlp+sH080IkS/IzO4OKOuoA=", eventhub_name="frontend")
             async with events:
                 event_data_batch = await events.create_batch()
                 cmts={
                         'username' : username,
                         'mail' : mail,
-                        'comment_subject' : sub,
+                        'product_category' : sub,
                         'comment':body,
                         'date_posted':date,
                         'time_posted':time
@@ -103,17 +103,57 @@ def comment(request):
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         loop.run_until_complete(run())
-        return render(request, template)
+        return redirect('feedback')
     else:
         return render(request, template)
 
     
 
 def profile(request):
-    return render(request,'profile.html')
+    template='profiles.html'
+    rec={}
+    cur=datetime.datetime.now()
+    if request.method == 'POST':
+        name = request.POST['name']
+        gsize = request.POST['gsize']
+        howner = request.POST['howner']
+        cage = request.POST['cage']
+        old = request.POST['aold']
+        young = request.POST['ayoung']
+        mstatus=request.POST['mstatus']
+        cost=request.POST['cost']
+        async def run():
+            events = EventHubProducerClient.from_connection_string(conn_str="Endpoint=sb://uievent.servicebus.windows.net/;SharedAccessKeyName=all;SharedAccessKey=aZ/r24gZxBGSxhC2OimpOlp+sH080IkS/IzO4OKOuoA=", eventhub_name="recom-ip")
+            async with events:
+                event_data_batch = await events.create_batch()
+                rec={
+                        'Name' : name,
+                        'Group_Size':gsize,
+                        'Home_Owner' : howner,
+                        'Car_Age' : cage,
+                        'Age_Oldest':old,
+                        'Age_Youngest':young,
+                        'Maritial_Status':mstatus,
+                        'Cost':cost,
+                        'Date': cur.strftime("%d-%m-%y"),
+                        'Time': cur.strftime("%H:%M:%S")
+                    }
+                s= json.dumps(rec)
+                event_data_batch.add(EventData(s))
+                await events.send_batch(event_data_batch)
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(run())
+        return redirect('profiles')
+    else:
+        return render(request, template)
+
 
 def log_out(request):
     return render(request,'logout.html')
 
 def about(request):
     return render(request,'about.html')
+
+def feedback(request):
+    return render(request,'feedback.html')

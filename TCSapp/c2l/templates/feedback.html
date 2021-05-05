@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="icon" href="{% static 'images/c2l_logo.png' %}" type="image/icon type" width="100" height="100" />
-            <title>C2L-Profiles</title> 
+            <title>TCS-MBU-Reports</title> 
     </head>
     <body>
     <header class="site-header">
@@ -24,7 +24,7 @@
             </div>
         <!-- Navbar Right Side -->
           <div class="navbar-nav">
-            <a class="nav-item nav-link" href="{% url 'comments' %}">Comment Form</a>
+            <a class="nav-item nav-link" href="{% url 'profile' %}">Recommendor System</a>
             <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
           </div>
         </div>
@@ -32,13 +32,8 @@
       </nav>
 </header>
 <div>
-  <div class=" w-25 mx-auto container">
-    <div class="alert alert-success" role="alert">
-      Successfully Logged in!!
-    </div>
-  </div>
   <div class="block">
-      
+    <iframe width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=b5deb0db-fe38-401f-95b5-2efb98f327dd&autoAuth=true&ctid=3c8ea0e4-127c-4a02-ac65-58830e4ac608&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWVhc3QtYXNpYS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
   </div>
 </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
