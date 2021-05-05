@@ -20,14 +20,14 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
       <div class="container">
-          <a class="navbar-brand mr-4" href=""><img src="{% static 'images/tcs.png' %}" height="40" width="80"></a>
+          <a class="navbar-brand mr-4" href="{% url 'home' %}"><img src="{% static 'images/tcs.png' %}" height="40" width="80"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="/">Home</a>
-              <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+              <a class="nav-item nav-link" href="https://www.tcs.com/#type=overlay&page=/connect-with-tcs/contact-us/contact-us-overlay">Contact Us</a>
             </div>
         <!-- Navbar Right Side -->
           <div class="navbar-nav">
@@ -75,7 +75,7 @@
           </a>
         </div> 
     </div>
-    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <div class="footer-copyright text-center py-3" style="font-weight: 1000">©<span style="color: cyan;font-weight: 500"> 2021 Tata Consultancy Services</span>:
       <a  class="font-weight:900" href="https://www.tcs.com/">TCS</a>
     </div>
 </footer>

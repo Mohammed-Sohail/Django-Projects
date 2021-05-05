@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="icon" href="{% static 'images/c2l_logo.png' %}" type="image/icon type" width="100" height="100" />
+            <title>TCS-MBU-Recommendor</title> 
+    </head>
+    <body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+          <a class="navbar-brand mr-4" href=""><img src="{% static 'images/tcs.png' %}" height="30" width="80"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="/">Home</a>
+              <a class="nav-item nav-link" href="#">About</a>
+            </div>
+        <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="{% url 'comments' %}">Feedback Form</a>
+            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+          </div>
+        </div>
+      </div>
+      </nav>
+</header>
+<div>
+  <div class=" w-25 mx-auto container">
+    <div class="alert alert-success" role="alert">
+      Successfully Logged in!!
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-8">
+        <div class="card text-center">
+          <div class="card-header bg-secondary" style="font-weight: 1000; font-size : 30px; color:cyan">
+            Recommendor System
+          </div>
+          <div class="card-body bg-steel">
+            <div class="card-text text-left">
+              <form action="{% url 'profiles' %}" method="POST">
+                  {% csrf_token %}
+                <label class="text-warning">Name</label>
+                <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter your name" required>
+                <label class="text-warning">Group size</label>
+                <input type="number" class="form-control" name="gsize" aria-describedby="emailHelp" placeholder="Enter size of group to be included in policy" required>
+                <div class="form-row">
+                  <div class="form-group col-md-6 container">
+                    <label class="text-warning">Home Owner</label>
+                    <input type="number" class="form-control" name="howner" aria-describedby="emailHelp" placeholder="Enter 1 if you are Home owner else 0" required>
+                  </div>
+                  <div class="form-group col-md-6 container">
+                    <label class="text-warning">Car Age</label>
+                    <input type="number" class="form-control" name="cage" aria-describedby="emailHelp" placeholder="Enter age of car" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6 container">
+                    <label class="text-warning">Age Oldest</label>
+                    <input type="number" class="form-control" name="aold" aria-describedby="emailHelp" placeholder="Enter age of oldest one in group" required>
+                  </div>
+                  <div class="form-group col-md-6 container">
+                    <label class="text-warning">Age Youngest</label>
+                    <input type="number" class="form-control" name="ayoung" aria-describedby="emailHelp" placeholder="Enter age of youngest one in group" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6 container">
+                    <label class="text-warning">Married Status</label>
+                    <input type="number" class="form-control" name="mstatus" aria-describedby="emailHelp" placeholder="Enter 1 if you are married else 0" required>
+                  </div>
+                  <div class="form-group col-md-6 container">
+                    <label class="text-warning">Cost</label>
+                    <input type="number" class="form-control" name="cost" aria-describedby="emailHelp" placeholder="Enter the desired cost" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" name="post" id="" class="btn btn-primary btn-lg btn-block w-25 mx-auto">Predict</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <!-- Power BI Space -->
+
+      </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+      </body>
+      
+</html>
