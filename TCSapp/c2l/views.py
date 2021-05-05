@@ -65,7 +65,7 @@ def log_in(request):
         if user is not None:
             # Save session as cookie to login the user 
             login(request, user)
-            return redirect('profile')
+            return redirect('profiles')
         else:
             # Incorrect credentials, let's throw an error to the screen.
             messages.warning(request, f"Invalid Username/Password")
