@@ -135,8 +135,7 @@ def profile(request):
                         'Age_Youngest':young,
                         'Maritial_Status':mstatus,
                         'Cost':cost,
-                        'Date': cur.strftime("%d-%m-%y"),
-                        'Time': cur.strftime("%H:%M:%S")
+                        'TimeStamp': cur.strftime("%Y-%m-%d %H:%M:%S")
                     }
                 s= json.dumps(rec)
                 event_data_batch.add(EventData(s))
